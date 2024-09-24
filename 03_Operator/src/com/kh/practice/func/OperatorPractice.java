@@ -84,5 +84,85 @@ public class OperatorPractice {
 		
 		System.out.println(str);
 	}
+	
+	public void method6() {
+		System.out.print("정수1 : ");
+		int num1 = sc.nextInt();
+		
+		System.out.print("정수2 : ");
+		int num2 = sc.nextInt();
+		
+		System.out.print("정수 입력 : ");
+		int input = sc.nextInt();
+		
+		boolean result = (input <= num1 || input > num2) ? true : false;
+		System.out.println(result);	
+	}
+	
+	public void method7() {
+		System.out.print("입력1 : ");
+		int num1 = sc.nextInt();
+		
+		System.out.print("입력2 : ");
+		int num2 = sc.nextInt();
+		
+		System.out.print("입력3 : ");
+		int num3 = sc.nextInt();
+		
+		boolean result = num1 == num2 && num2 == num3 ? true : false;
+		System.out.println(result);
+	}
+	
+	public void method8() {
+		System.out.print("A사원의 연봉 : ");
+		int salaryA = sc.nextInt();
+		
+		System.out.print("B사원의 연봉 : ");
+		int salaryB = sc.nextInt();
+		
+		System.out.print("C사원의 연봉 : ");
+		int salaryC = sc.nextInt();
+		
+		/*
+		 * double inA = salaryA * 1.4; System.out.print("A사원 연봉/연봉+a : ");
+		 * System.out.println(salaryA+"/"+inA); System.out.println("3000" + (inA >= 3000
+		 * ? "이상":"이하"));
+		 */
+		
+		/*
+		 * double inB = salaryB * 1.0;
+		 * System.out.println("B사원 연봉/연봉+a : "+salaryB+"/"+inB);
+		 * System.out.println("3000" + (inB >= 3000 ? "이상":"이하"));
+		 */
+		/*
+		 * double inC = salaryC+ salaryC * 0.15;
+		 * System.out.println("C사원 연봉/연봉+a : "+salaryC+"/"+inC);
+		 * System.out.println("3000" + (inC >= 3000 ? "이상":"이하"));
+		 */
+		calc(salaryA, 0.4);
+		calc(salaryB, 0);
+		calc(salaryC, 0.15);
+	}
+	
+	public void calc(int salary, double ins) {
+		double in = salary+ salary * ins;
+		System.out.println("사원 연봉/연봉+a : "+salary+"/"+in);
+		System.out.println("3000" + (in >= 3000 ? "이상":"이하"));
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
 }

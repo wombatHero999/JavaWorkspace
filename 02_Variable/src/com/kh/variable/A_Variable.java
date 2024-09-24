@@ -12,15 +12,15 @@ public class A_Variable {
 		
 		// 월급 = 시급 x 근무시간 x 근무일 
 		// 민경민 : 00000원을 받습니다.
-		System.out.println("민경민1 : "+(10000 * 6 * 12)+"원을 받습니다." );
-		System.out.println("민경민2 : "+(10000 * 6 * 12)+"원을 받습니다." );
-		System.out.println("민경민3 : "+(10000 * 6 * 12)+"원을 받습니다." );
+		System.out.println("민경민1 : "+(11000 * 6 * 12)+"원을 받습니다." );
+		System.out.println("민경민2 : "+(12000 * 6 * 12)+"원을 받습니다." );
+		System.out.println("민경민3 : "+(13000 * 6 * 12)+"원을 받습니다." );
 		System.out.println("민경민4 : "+(10000 * 6 * 12)+"원을 받습니다." );
 		System.out.println("민경민5 : "+(10000 * 6 * 12)+"원을 받습니다." );
 		System.out.println("민경민6 : "+(10000 * 6 * 12)+"원을 받습니다." );
 		
 		System.out.println("=== 변수 사용 후 ===");
-		int pay = 10000;
+		int pay = 11000;
 		int time = 6;
 		int day = 12;
 		
@@ -41,7 +41,7 @@ public class A_Variable {
 	
 	public void declareVariable() {
 		/* 
-		 * 변수를 선언(값을 기록하기위해 메모리(RAM)에 공간을 확보해두겠다. )
+		 * 변수를 선언(값을 기록하기위해 메모리(RAM)에 공간을 확보해두겠다.)
 		 * [표현법]
 		 * 자료형 변수명;
 		 * 
@@ -54,7 +54,7 @@ public class A_Variable {
 		 * 2. 낙타등표기법 지키기(자바) ✨✨
 		 *  ex) String userName; (o)
 		 *      String username; (x)
-		 * 3. 같은 영역안에서는 동일한 변수명 선언 불가.    .
+		 * 3. 같은 영역안에서는 동일한 변수명 선언 불가.    
 		 * 4. 해당 영역안에서 선언된 변수는 해당 영역에서만 사용 가능.
 		 * 5. 기본예약어는 변수명으로 선언할 수 없다. 
 		 * */
