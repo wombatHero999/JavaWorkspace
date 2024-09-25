@@ -166,7 +166,116 @@ public class A_For {
 		// a p p l e
 	}
 	
+	//구구단 출력(2단)
+	public void method10() {
+		/* 
+		 * 
+		 * 2 X 1 = 2
+		 * 2 X 2 = 4 
+		 * 2 X 3 = 6
+		 * 2 X 4 = 8
+		 * ...
+		 * 2 X 9 = 18
+		 * */
+//		int dan = 2;
+//		for(int i = 1; i < 10; i++) {
+//			System.out.println(dan+" X "+i+"= "+i*dan);
+//		}
+//		System.out.println();
+//		dan = 3;
+//		for(int i = 1; i < 10; i++) {
+//			System.out.println(dan+" X "+i+"= "+i*dan);
+//		}
+//		System.out.println();
+//		dan = 4;
+//		for(int i = 1; i < 10; i++) {
+//			System.out.println(dan+" X "+i+"= "+i*dan);
+//		}
+//		System.out.println();
+//		dan = 9;
+//		for(int i = 1; i < 10; i++) {
+//			System.out.println(dan+" X "+i+"= "+i*dan);
+//		}
+		
+		//구구단코드 실행
+		for(int dan = 2; dan <=9; dan++) {
+			gugudan(dan);
+			System.out.println();
+		}
+	}
 	
+	public void method11() {
+		// 2단부터 9단 사이의 랜덤한 단을 출력
+		int randomDan = (int) (Math.random() * 8 + 2);
+		
+		//gugudan(randomDan);
+		for(int i = 1; i<10; i++) {
+			System.out.printf("%d X %d = %d%n", randomDan, i , randomDan * i);
+		}
+	}
+	
+	public void method12() {
+		// 1 2 3 4 5
+		// 1 2 3 4 5
+		// 1 2 3 4 5
+		
+		//출력할 코드
+//		for(int i = 1; i<6; i++) {
+//			System.out.print(i+" ");
+//		}
+		for(int i = 0; i<3; i++) {
+			//출력할 코드
+			for(int j = 1; j<6; j++) {
+				System.out.print(j+" ");
+			}
+			System.out.println();
+		}
+	}
+	
+	public void method13() {
+		//****\n
+		//****\n
+		//****\n
+		//****\n
+		//중첩 반복문구조로 위 출력결과를 만들기
+		for(int i = 0; i<4; i++) {
+			for(int j = 0; j<4; j++) {
+				System.out.print("*"); // ****	
+			}
+			System.out.println();//****\n
+		}
+	}
+	
+	public void method14() {
+		//1***\n
+		//*2**\n		
+		//**3*\n		
+		//***4\n
+		for(int j = 1; j <5; j++) {
+			for(int i = 1; i<5; i++) {
+				if(i == j) {
+					System.out.print(i);				
+				}else {
+					System.out.print("*");				
+				}			
+			}
+			System.out.println();
+		}
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public void gugudan(int dan) {
+		for(int i = 1; i < 10; i++) {
+			System.out.println(dan+" X "+i+"= "+i*dan);
+		}
+	}
 	
 	
 	
