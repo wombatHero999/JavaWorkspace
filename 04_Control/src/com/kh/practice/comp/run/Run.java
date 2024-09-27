@@ -8,7 +8,11 @@ public class Run {
 		UpAndDown uad = new UpAndDown();
 		
 		RockPaperScissors rps = new RockPaperScissors();
+		RockPaperScissors rps2 = new RockPaperScissors();
+		RockPaperScissors rps3 = new RockPaperScissors();
+		RockPaperScissors rps4 = new RockPaperScissors();
 		
+		rps.rps();
 		
 	}
 }

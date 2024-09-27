@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class LoopPractice {
 	Scanner sc = new Scanner(System.in);
-
+	
 	public void practice1() {
 		System.out.print("1이상의 숫자를 입력하세요 :");
 		int num = sc.nextInt();
@@ -107,7 +107,6 @@ public class LoopPractice {
 			System.out.print(start+" ");
 			start += gong;
 		}
-		
 	}
 	
 	
