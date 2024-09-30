@@ -1,5 +1,7 @@
 package com.kh.cha1_encaps.model.vo;
 
+//import java.lang.*;
+
 public class Student {
 	// 필드
 	// 필드 == 멤버변수 == 인스턴스변수
@@ -17,7 +19,7 @@ public class Student {
 	// 모든 set/get메소드는 접근이 가능하도록 public 접근제한자를 사용함.
 	
 	// 이름에 적힌 값을 수정할 수 있는 메소드
-	public void setName(String name) {
+	public void setName(String name) {		
 		// 인스턴스변수 = 매개변수 ? 
 		this.name = name;
 		// this는 생성된 객체의 주소값을 보관하는
@@ -32,6 +34,7 @@ public class Student {
 	// age필드에 값을 저장(set) / 조회(get)하는 함수 작성
 	public void setAge(int age) {
 		this.age = age;
+		System.out.println(getName());
 	}
 	
 	public int getAge() {

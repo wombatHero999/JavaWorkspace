@@ -18,7 +18,7 @@ public class Run {
 		 * 2) setter / getter 메소드 사용
 		 *    간접적으로나마 접근하여 값을 담거나 그 값을 가져올 수 있는 메소드.
 		 *  */
-		Student hong = new Student();
+		Student hong = new Student();		
 		hong.setName("홍길동");		
 		hong.setAge(15);
 		hong.setHeight(175.5);
