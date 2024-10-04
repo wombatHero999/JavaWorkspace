@@ -20,6 +20,10 @@ public class MethodTest2 {
 		//System.out.printf
 	}
 	
+//	public void test(int a2) {
+//		//System.out.printf
+//	}
+	
 	public void test(int a2 , String s) {
 		
 	}
