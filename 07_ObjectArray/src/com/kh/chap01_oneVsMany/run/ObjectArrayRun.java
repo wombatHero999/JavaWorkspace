@@ -3,10 +3,14 @@ package com.kh.chap01_oneVsMany.run;
 import java.util.Scanner;
 
 import com.kh.chap01_oneVsMany.model.vo.Book;
+import com.kh.chap02_objectArray.model.vo.Phone;
+import com.kh.chap02_objectArray.model.vo.Phone;
 
 public class ObjectArrayRun {
 	public static void main(String[] args) {
 		Book[] arr = new Book[3];
+		int [] iArr= {1,2,3,4,5};
+		Book[] bArr = {new Book()};
 		
 		Scanner sc = new Scanner(System.in);
 		
