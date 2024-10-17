@@ -2,7 +2,7 @@ package com.kh.chap02_set.part01_hashSet.model.vo;
 
 import java.util.Objects;
 
-public class Student {
+public class Student implements Comparable<Student>{
 	private String name;
 	private int age;
 	private int score;
@@ -62,6 +62,16 @@ public class Student {
 			return false;
 		Student other = (Student) obj;
 		return age == other.age && Objects.equals(name, other.name) && score == other.score;
+	}
+
+	@Override
+	public int compareTo(Student o) {
+		int result = this.name.compareTo(o.name);
+		
+		if(result == 0) {
+			result = this.age - o.age;
+		}
+		return result;
 	}
 	
 	/* 
