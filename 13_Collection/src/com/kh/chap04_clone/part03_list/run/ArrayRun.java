@@ -41,15 +41,34 @@ public class ArrayRun {
 	}
 
 	public boolean isEmpty() {
-
+		//return mArr[0] == null ?  true : false;
+		return size == 0 ?  true : false;
 	}
 
 	public Music get(int index) {
-
+		// 제대로된 index인지 체크
+		if(index < 0 || index >= size) {
+			System.out.println("잘못된 인덱스입니다.");
+			//throw new Exception();
+			return null;
+		}
+		
+		return mArr[index];
 	}
 
 	public Music set(int index, Music m) {
-
+		// index위치에 있는 Music객체의 값을 변경
+		// 변경전의 값을 반환
+		if(index < 0 || index >= size) {
+			System.out.println("잘못된 인덱스입니다.");
+			//throw new Exception();
+			return null;
+		}
+		Music returnValue = mArr[index];
+		
+		mArr[index] = m;
+		
+		return returnValue;
 	}
 
 	public void add(Music m) {
@@ -63,6 +82,7 @@ public class ArrayRun {
 //		}
 		if (mArr.length == size)
 			mArr = Arrays.copyOf(mArr, mArr.length + 1);
+		
 		mArr[size++] = m;
 		// size++;
 	}
@@ -98,7 +118,28 @@ public class ArrayRun {
 	}
 
 	public Music remove(int index) {
-
+		if(index < 0 || index >= size) {
+			System.out.println("잘못된 인덱스 범위입니다.");
+			return null;
+		}
+		
+		Music rValue = mArr[index];
+		
+		mArr[index] = null;
+		
+		// 삭제된 인덱스 뒤쪽의 값들을 한칸씩 앞으로 땡겨오기
+		// [m1, m2, m3, m4 ,m5] 여기서 2번인덱스(m3)를 삭제
+		// [m1, m2, null, m4, m5]
+		// [m1, m2, m4, m5, m5]
+		// [m1, m2, m4, m5, null]
+		for(int i = index; i < size -1; i++) {
+			mArr[index] = mArr[index+1];
+		}
+		mArr[size-1] = null;
+		
+		size--;
+		
+		return rValue;
 	}
 
 	public String toString() {
