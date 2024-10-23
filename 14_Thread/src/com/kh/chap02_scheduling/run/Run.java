@@ -18,6 +18,7 @@ public class Run {
 	 *   - 각 스레드에게 작업시간을 할당하여 스레드를 정해진 만큼만 순환시켜서 실행 하는 방식
 	 *   - 만약 우선순위가 같은 스레드 끼리는 Round Robin이 적용된다.
 	 *   - jvm에 의해 정해지므로 코드로써 제어가 불가능
+	 *   
 	 * */
 	public static void main(String[] args) {
 		
