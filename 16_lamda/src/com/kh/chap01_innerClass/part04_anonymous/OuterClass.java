@@ -20,6 +20,7 @@ public class OuterClass {
 	public Runnable getRunnable(String threadName) {
 		// 클래스 정의와 객체 생성을 한번에 진행
 		// new + 자료형 + 익명생성자 + {코드 구현} + ;
+		
 		return new Runnable () {
 			@Override
 			public void run() {

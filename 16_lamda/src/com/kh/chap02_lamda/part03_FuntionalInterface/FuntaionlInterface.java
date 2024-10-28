@@ -1,6 +1,9 @@
 package com.kh.chap02_lamda.part03_FuntionalInterface;
 
+import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Set;
+import java.util.TreeSet;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -57,15 +60,34 @@ public class FuntaionlInterface {
 		
 		// 1. 현재시각을 출력 람다식.
 		// 출력예시 : 2024-04-19 12:50:00
+		Runnable displayCurrentTime = () -> {
+			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+			System.out.println(sdf.format(new Date()));			
+		};
+		displayCurrentTime.run();
 		
 		// 2. 오름차순 정렬이 되는 TreeSet객체를 활용하여 6자리 로또번호(1~45)를 생성후 반환해주는 람다식 작성
 		//    생성후 반환받은 로또번호를 출력하시오.
 		// 출력예시 : [1, 11, 13, 23, 29, 44]
-		
+		Supplier<Set<Integer>> lottoPublisher = () -> {
+			Set<Integer> lotto = new TreeSet<>();
+			while(lotto.size() < 6) {
+				lotto.add((int) (Math.random() * 45 + 1));
+			}
+			return lotto;
+		};
+		System.out.println(lottoPublisher.get());
 		// 3. 환율계산기 : 원화값(정수)을 입력시 달러값(실수)를 리턴해주는 함수
 		//    현재환율 : 1달러 == 1400원
 		//    출력예시 : xxxx원은 달러로 xxxx.x$입니다.
 		
+//		Function<Integer, Double> wonDollar = won -> {
+//			double dollar = won / 1400.0;
+//			return dollar;
+//		};
+		int won2 = 1000000;
+		Function<Integer, Double> wonDollar = won -> won / 1400.0;
+		System.out.println(won2+"원은 달러로 "+wonDollar.apply(won2)+"$ 입니다.");
 	}
 	
 	

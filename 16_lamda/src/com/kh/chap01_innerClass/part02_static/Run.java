@@ -16,8 +16,7 @@ public class Run {
 		// m2.getName();
 		
 		// 빌더패턴을 통해 객체 생성
-		Member member = new Member
-					.Builder("alsrudals")
+		Member member = new Member.Builder("alsrudals")
 					.age(25)
 					.name("경민")
 					.phoneNumber(1111)
