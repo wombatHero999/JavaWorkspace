@@ -24,7 +24,6 @@ public class JDBCTemplate {
 	
 	// 1. db접속 및 Connection 생성
 	public static Connection getConnection() {
-		
 		/*
 		 * JDBC Driver, 접속할 URL, 계정명, 비밀번호를 자바 소스코드내에
 		 * 명시적 작성하는 경우 보안상 위험할 수 있다. 

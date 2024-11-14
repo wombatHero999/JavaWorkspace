@@ -44,7 +44,10 @@ public class MemberView {
 	 * 사용자에게 탈퇴할 회원의 아이디를 입력받은 후 삭제 요청하는 메소드
 	 *  */
 	private void deleteMember() {
+		System.out.print("삭제할 회원 아이디 : ");
+		String id = sc.nextLine();
 		
+		mc.deleteMember(id);
 	}
 	
 	/**
@@ -52,14 +55,36 @@ public class MemberView {
 	 * 입력 받은 후 변경요청하는 메소드
 	 *  */
 	private void updateMember() {
+		System.out.print("정보를 변경할 회원의 아이디 : ");
+		String id = sc.nextLine();
 		
+		System.out.print("변경할 비밀번호 : ");
+		String pwd = sc.nextLine();
+		
+		System.out.print("변경할 이메일 : ");
+		String email = sc.nextLine();
+		
+		System.out.print("변경할 핸드폰번호 : ");
+		String phone = sc.nextLine();
+		
+		System.out.print("변경할 주소 : ");
+		String address = sc.nextLine();
+		
+		mc.updateMember(id, pwd, email, phone, address);
 	}
 	
 	/** 
 	 * 사용자에게 검색할 회원의 "이름"을 입력 받은 후 조회 요청하는 메소드
+	 * + 이름에 입력값이 포함된 경우 모두 조회
 	 * */
 	private void selectByUserName() {
+		System.out.print("검색할 회원 이름을 입력하세요 : ");
+		String name = sc.nextLine();
 		
+		List<Member> list = mc.selectByUserName(name);
+		for(Member m : list) {
+			System.out.println(m);
+		}
 	}
 	
 	/** 
@@ -67,6 +92,10 @@ public class MemberView {
 	 * */
 	private void selectByUserId() {
 		// view -> controller -> service -> dao -> sql
+		System.out.print("검색할 회원 아이디 : ");
+		String id = sc.nextLine();
+		
+		System.out.println(mc.selectByUserId(id));		
 	}
 
 	private void selectAll() {

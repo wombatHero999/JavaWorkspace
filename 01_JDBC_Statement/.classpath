@@ -8,5 +8,6 @@
 		</attributes>
 	</classpathentry>
 	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ORACLE_LIB"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/COMMON_DBCP"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

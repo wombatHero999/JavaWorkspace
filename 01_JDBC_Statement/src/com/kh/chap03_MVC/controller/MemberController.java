@@ -51,6 +51,60 @@ public class MemberController {
 		
 		return list;
 	}
+
+	public Member selectByUserId(String id) {
+		
+		Member m = service.selectByUserId(id);
+		
+		if(m == null) {
+			new MemberView().displayFail("조회 결과가 없습니다.");
+		}else {
+			new MemberView().displaySuccess("조회 성공");
+		}
+		
+		return m;
+	}
+
+	public List<Member> selectByUserName(String name) {
+		
+		List<Member> list = service.selectByUserName(name);
+		
+		if(list.isEmpty()) {
+			new MemberView().displayFail("검색된 이름과 일치하는 회원이 없습니다.");
+		}else {
+			new MemberView().displaySuccess("검색된 이름과 일치하는 회원을 조회했습니다.");
+		}
+		return list;		
+	}
+
+	public void updateMember(String id, String pwd, String email, String phone, String address) {
+		
+		Member m = new Member();
+		m.setMemberId(id);
+		m.setMemberPwd(pwd);
+		m.setEmail(email);
+		m.setPhone(phone);
+		m.setAddress(address);
+		
+		int result = service.updateMember(m);
+		
+		if(result > 0) {
+			new MemberView().displaySuccess("수정에 성공했습니다.");
+		}else {
+			new MemberView().displayFail("수정에 실패했습니다.");
+		}
+		
+	}
+
+	public void deleteMember(String id) {
+		int updateCount = service.deleteMember(id);
+		
+		if(updateCount > 0) {
+			new MemberView().displaySuccess("삭제에 성공했습니다.");
+		}else {
+			new MemberView().displayFail("삭제에 실패했습니다.");
+		}
+	}
 	
 	
 	

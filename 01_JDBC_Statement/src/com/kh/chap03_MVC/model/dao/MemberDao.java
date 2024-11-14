@@ -90,6 +90,106 @@ public class MemberDao {
 		
 		return list;
 	}
+
+	public Member selectByUserId(Connection conn, String id) {
+		
+		Member m = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String sql = prop.getProperty("selectByUserId");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			rset = pstmt.executeQuery();
+			
+			if(rset.next()) {
+				m = new Member();
+				m.setMemberName( rset.getString("MEMBER_NAME")  );
+				m.setAge( rset.getInt("AGE") );
+				m.setPhone( rset.getString("PHONE") );
+			}
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return m;
+	}
+
+	public List<Member> selectByUserName(Connection conn, String name) {
+		List<Member> list = new ArrayList();
+		Member m = null;
+		PreparedStatement pstmt = null;
+		ResultSet rset = null;
+		String sql = prop.getProperty("selectByUserName");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, name);
+			
+			rset = pstmt.executeQuery();
+			
+			while(rset.next()) {
+				m = new Member();
+				m.setMemberName( rset.getString("MEMBER_NAME")  );
+				m.setAge( rset.getInt("AGE") );
+				m.setPhone( rset.getString("PHONE") );
+				
+				list.add(m);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(rset);
+			JDBCTemplate.close(pstmt);
+		}
+		return list;
+	}
+
+	public int updateMember(Connection conn, Member m) {
+		int updateCount = 0;
+		PreparedStatement pstmt = null;
+		String sql = prop.getProperty("updateMember");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, m.getMemberPwd());
+			pstmt.setString(2, m.getPhone());
+			pstmt.setString(3, m.getEmail());
+			pstmt.setString(4, m.getAddress());
+			pstmt.setString(5, m.getMemberId());
+			
+			updateCount = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(pstmt);
+		}
+		return updateCount;
+	}
+
+	public int deleteMember(Connection conn, String id) {
+		int updateCount = 0;
+		PreparedStatement pstmt = null;
+		String sql = prop.getProperty("deleteMember");
+		
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, id);
+			
+			updateCount = pstmt.executeUpdate();
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} finally {
+			JDBCTemplate.close(pstmt);
+		}
+		return updateCount;
+	}
 	
 	
 	
