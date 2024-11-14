@@ -1,20 +1,41 @@
 package com.kh.board.view;
 
+import java.util.Scanner;
+
+import com.kh.board.controller.BoardController;
+import com.kh.board.model.vo.Member;
+
 public class BoardView {
 	// 입력을 위한 Scanner변수 선언 및 초기화
-	// 기능 실행을 위한 BoardController 변수 선언 및 초기화.
+	Scanner sc = new Scanner(System.in);
+	BoardController bc = new BoardController();
 	
+	// 기능 실행을 위한 BoardController 변수 선언 및 초기화.
+	Member loginMember = null; // 로그인 성공시 사용자 정보를 저장하는 저장공간
 	/**
 	 * 로그인 기능.
 	 * 사용자에게 로그인을 할 계정의 ID와, PWD를 입력받고 로그인 요청을 보내는 메소드
 	 * 로그인 성공시 mainMenu를 호출, 로그인 실패시 ID,PWD를 다시 입력받음.
+	 * + 로그인 성공시 로그인한 사용자 정보를 저장.
 	 *  */
 	public void login() {
-		System.out.println("### 게시판 서비스###");
-		System.out.println("서비스 이용을 위해 로그인을 진행해주세요.");
-		System.out.print("ID");
-		System.out.print("PWD");		
-		
+		while(true) {
+			System.out.println("### 게시판 서비스###");
+			System.out.println("서비스 이용을 위해 로그인을 진행해주세요.");
+			System.out.print("ID");
+			String id = sc.nextLine();
+			
+			System.out.print("PWD");
+			String pwd =sc.nextLine();
+			
+			int result = bc.login(id , pwd);
+			if(result > 0) {
+				loginMember = new Member();
+				loginMember.setMemberId(id);
+				break;
+			}			
+		}
+		mainMenu();
 	}
 	
 	/**
@@ -66,7 +87,7 @@ public class BoardView {
 	
 	/** 
 	 * 게시글 수정 메소드
-	 * 사용자로 하여금 수정할 게시글 제목과 내용을 입력받아 게시글 수정요청을 보내는 메소드
+	 * 사용자로 하여금 수정할 게시글 제목, 번호와 내용을 입력받아 게시글 수정요청을 보내는 메소드
 	 * */
 	public void updateBoard() {
 		
@@ -79,18 +100,13 @@ public class BoardView {
 	public void deleteBoard() {
 		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+	public void displaySuccess(String string) {
+		System.out.println(string);
+	}
+
+	public void displayFail(String string) {
+		System.out.println(string);
+	}
 	
 }

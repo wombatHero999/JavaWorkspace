@@ -9,10 +9,10 @@ public interface BoardService {
 	 * 로그인용 메서드
 	 * 
 	 * @param memberId  : 사용자가 전달한 id값
-	 * @param MemberPwd : 사용자가 전달한 pwd값
+	 * @param memberPwd : 사용자가 전달한 pwd값
 	 * @return 조회된 사용자의 수
 	 */
-	int login(String memberId, String MemberPwd);
+	int login(String memberId, String memberPwd);
 
 	/**
 	 * 게시글 등록용 메서드
