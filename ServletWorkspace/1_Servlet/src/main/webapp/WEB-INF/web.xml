@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd http://xmlns.jcp.org/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="5.0">
+  <!-- 
+  	* web.xml
+  	 - 배포서술자(DD, Deployment Descriptor)  
+  	 - 웹 어플리케이션의 기본적인 설정을 위해 작성하는 파일
+  	 - 아파치톰캣에 의해서 서버가 구동(startup)될 때 "가장 먼저" 읽혀지는 파일
+  	 - web.xml안에는 Filter, Listener, Servlet, Wrapper 객체들에 대한 정보를 기록한다.
+   -->
+  <display-name>1_Servlet</display-name>
+  
+  <!-- 
+  	*welcome-file : 현재 어플리케이션으로 요청이 들어왔을 때 가장 먼저 보여줄 파일을 지정
+  		http://localhost:8081/servlet 
+  		
+  		/servlet => 서버 내에 구동중인 어플리케이션들을 구분할 수 있는 context root
+   -->  
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+  </welcome-file-list>
+  
+  <!-- 서블릿 등록 -->
+  <servlet>
+  	<servlet-name>RequestGetServlet</servlet-name>
+  	<servlet-class>com.kh.controller.RequestGetServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  	<servlet-name>RequestGetServlet</servlet-name>
+  	<url-pattern>/getTest</url-pattern>
+  </servlet-mapping>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</web-app>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get 방식 테스트 요청 페이지</title>
+</head>
+<body>
+	
+	<h1>Get 방식으로 요청 후 응답페이지 받아보기</h1>
+	
+	<p>
+		특징 1. GET방식으로 요청하는건 URL의 Header영역에 데이터들을 포함시켜서 요청하는 것을 의미한다. <br>
+		  => 사용자가 입력한 값들이 url에 쿼리스트링으로 노출된다 <br>
+		  => 데이터 보안이 불가능<br>
+		  => 즉, 로그인 , 회원가입시 부적절한 방법 <br>
+		  
+		특징 2. Header영역은 전송길이 제한 <br>
+		  => 방대한 데이터를 담은 경우, 초과된 데이터는 절단 <br>
+		  => 즉, 게시판 등록, 수정과 같은 방식에서는 부적절한 방법 <br>		
+	</p>
+
+	<h2>개인정보 입력 - get</h2>
+	
+	<!-- 
+		form내의 action속성 값 지정
+		
+		절대경로방식 : 경로의 시작이 /로 시작되는 경우 => 서버의 contextroot부터 경로를 지정한다.
+		           /servlet/getTest
+		상대경로방식 : 경로의 시작이 /가 아닌경우 -> 현재 페이지를 기준으로 가장 마지막 / 로부터 그 뒤에
+	 	           action에 작성한 값이 붙여지면서 요청이 들어간다.
+	 -->	
+	<form action="/servlet/getTest" method="get" >
+		<ul>
+			<li>
+				<!-- input 태그 사용 시 key 값은 반드시 넘겨야 한다 (name) -->
+				이름 : <input type="text" name="name"> 
+			</li> 
+			<li>
+				성별 : 
+				남자 <input type="radio" name="gender" value="M">
+				여자 <input type="radio" name="gender" value="F"> 
+				<!-- radio 버튼 사용 시 같은 묶음으로 묶어줄 경우는 key 를 동일하게 지정한다 -->
+			</li>
+			<li>
+				나이 : <input type="number" name="age"> <!-- value="0" -->
+			</li>
+			<li>
+				사는 도시 : 
+				<select name="city">
+					<option>서울시</option>
+					<option>경기도</option>
+					<option>강원도</option>
+					<option>충청도</option>
+					<option>경상도</option>
+					<option>전라도</option>
+				</select>
+			</li>
+			<li>
+				키 : <input type="range" name="height" min="140" max="200">
+			</li>
+			<li>
+				좋아하는 음식 (모두 고르시오) :
+				한식 <input type="checkbox" name="food" value="한식">
+				중식 <input type="checkbox" name="food" value="중식">
+				일식 <input type="checkbox" name="food" value="일식">
+				양식 <input type="checkbox" name="food" value="양식">
+				분식 <input type="checkbox" name="food" value="분식">
+				<!-- checkbox 사용 시 같은 묶음으로 묶어줄 경우는 radio 버튼과 마찬가지로 key 를 동일하게 지정한다
+				 	 단, 한개의 key 값에 여러개의 value 가 묶여 넘겨진다 -->
+			</li>
+			<li>
+				<input type="submit">
+				<input type="reset">
+			</li>
+		</ul>
+	</form>
+
+
+
+
+
+
+</body>
+</html>
