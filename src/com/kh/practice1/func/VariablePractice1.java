@@ -19,7 +19,18 @@ public class VariablePractice1 {
 		System.out.print("키 : ");
 		double height = sc.nextDouble();
 		
+		System.out.println("키 "+height+"cm인 "+age+"살 "+
+		gender+"자 "+name+"님 반갑습니다 ^^");
 	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
