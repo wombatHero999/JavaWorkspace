@@ -62,6 +62,29 @@ public class B_Cast {
 		byte b3 = (byte)(b1 + b2);
 	}
 	
+	public void forceCasting() {
+		
+		// 1. double -> float
+		float f1 = 4.0f;
+		
+		double d2 = 8.0;
+		float f2 = (float) d2;
+		
+		// 2. double -> int
+		double d3 = 10.89;
+		int i3 = (int) d3;
+		System.out.println("i3 : " + i3);
+		
+		int iNum = 10;
+		double dNum = 5.89;
+		
+		//int iSum = iNum + dNum;
+		// 해결방법 1. 연산결과를 int에 맞춰 강제형변환
+		int iSum = (int)(iNum + dNum);
+		
+		// 해결방법 2. 덧셈 연산 전에 dNum을 int로 강제형변환
+		int iSum2 = iNum + (int)dNum;
+	}
 	
 	
 	

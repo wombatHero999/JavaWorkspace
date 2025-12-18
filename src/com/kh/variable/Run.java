@@ -7,7 +7,14 @@ public class Run {
 		//av.initVariable();
 		
 		B_Cast bc = new B_Cast();
-		bc.autoCasting();		
+		//bc.autoCasting();		
+		//bc.forceCasting();
 		
+		C_Scanner cs = new C_Scanner();
+		cs.inputTest1();
 	}
 }
+
+
+
+
